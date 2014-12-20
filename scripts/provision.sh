@@ -6,3 +6,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869
 curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 git https://github.com/amplab/docker-scripts.git
 
+# run spark clusters
+sudo ./deploy/deploy.sh -i amplab/spark:0.9.0 -w 3
+
+# TODO: port forwarding (without change deploy script, iptable/socat)
