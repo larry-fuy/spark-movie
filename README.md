@@ -2,6 +2,17 @@
 
 Moive recommendation example from AMPLab spark camp 
 
+## Clone this repo
+
+## Prepare data
+```
+cd spark-movie
+wget  http://d12yw77jruda6f.cloudfront.net/ampcamp5-usb.zip
+unzip ampcamp5-usb.zip
+mv ampcamp5-usb/data ./data
+rm -r ampcamp5-usb
+```
+
 ## Lauch Vagrant box and docker Spark cluster
 
 ```
@@ -15,9 +26,15 @@ vagrant ssh
 
 ## Launch Spark cluster
 ```
+cd ~ && git clone https://github.com/amplab/docker-scripts.git
 cd ~/docker-scripts/bin 
 sudo ./deploy.sh -i amplab/spark:1.0.0 -w 3 -v /vagrant/data
 ```
+or
+```
+cd /vagrant/scripts && ./run-spark.sh
+```  
+
 
 ## To run the movie recommendation there is a package should be install on each node
 
